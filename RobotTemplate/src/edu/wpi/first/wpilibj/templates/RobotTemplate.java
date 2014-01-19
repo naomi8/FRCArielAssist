@@ -9,10 +9,7 @@
 
 package edu.wpi.first.wpilibj.templates;
 
-import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.RobotDrive;
-import edu.wpi.first.wpilibj.SimpleRobot;
-import edu.wpi.first.wpilibj.Timer;
+import edu.wpi.first.wpilibj.*;
 /**
  * The VM is configured to automatically run this class, and to call the
  * functions corresponding to each mode, as described in the SimpleRobot
@@ -21,17 +18,18 @@ import edu.wpi.first.wpilibj.Timer;
  * directory.
  */
 public class RobotTemplate extends SimpleRobot {
-    RobotDrive drive = new RobotDrive(1,2);
+    RobotDrive drive;
     //left channel = 1, right channel = 2
-    Joystick leftStick = new Joystick(1);
-    Joystick rightStick = new Joystick(1);
+    Joystick leftStick;
+    Joystick rightStick;
     /*
      * This function is called once each time th    e robot enters autonomous mode.
      */
-    public RobotTemplate() {
-        getWatchdog().setEnabled(false);
+    public void robotInit() {
+        drive = new RobotDrive(1,2,3,4);
+        leftStick = new Joystick(1);
+        rightStick = new Joystick(1);
     }
-    
     public void autonomous() {
         getWatchdog().setEnabled(true);
         getWatchdog().setExpiration(0.5);
