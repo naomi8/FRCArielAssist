@@ -1,3 +1,3 @@
 FRCArielAssist
 ==============
-2014 USFIRST FRC Ariel Assist \Code
+2014 USFIRST FRC Ariel Assist Code
