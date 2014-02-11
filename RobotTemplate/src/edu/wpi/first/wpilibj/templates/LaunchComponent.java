@@ -1,6 +1,7 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * The launch component is composed of a motor and two buttons
+ 
+ 
  */
 package edu.wpi.first.wpilibj.templates;
 
