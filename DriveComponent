@@ -21,7 +21,7 @@ public class DriveComponent implements RobotComponent {
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
 
-    private RobotDrive drive;
+    //private RobotDrive drive;
     private CANJaguar fljag;  //Front Left Wheel Jag
     private CANJaguar rljag; //Rear Left Wheel Jag
     private CANJaguar frjag; //Front Right Wheel Jag
