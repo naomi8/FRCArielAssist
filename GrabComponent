@@ -18,8 +18,8 @@ import edu.wpi.first.wpilibj.templates.Robot;
 
 public class GrabComponent implements RobotComponent {
 
-//private CANJaguar grabMotor;
-//private Joystick armStick;
+    //private CANJaguar grabMotor;
+    //private Joystick armStick;
     //private final Joystick armStick = new Joystick(2);
     private final JoystickButton releaseButton = new JoystickButton(Robot.ARM_STICK, 2);
     private Victor grabMotor;
