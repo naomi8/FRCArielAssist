@@ -47,10 +47,10 @@ public class RobotRunner extends IterativeRobot implements RobotComponent {
     private final DigitalInput gBLimitSwitch = new DigitalInput(2);
     private final DigitalInput launchLimitSwitch = new DigitalInput(3);
     //TIME FOR BUSINESS! COMPONENTS INSTANTIATED BELOW!!
-    private DriveComponent driveComp = new DriveComponent(DRIVE_JOYSTICK, fljag, rljag, frjag, rrjag, accel);
+    private DriveComponent driveComp;
     private GrabComponent grabComp = new GrabComponent(ARM_JOYSTICK, grabButt, releaseButt, grabVictor);
     private LaunchComponent launchComp = new LaunchComponent(ARM_JOYSTICK, launchButt, retractButt, launchVic);
-    private final LiftComponent liftComp = new LiftComponent(ARM_JOYSTICK, armVictor, gFLimitSwitch, gBLimitSwitch);
+    private LiftComponent liftComp = new LiftComponent(ARM_JOYSTICK, armVictor, gFLimitSwitch, gBLimitSwitch);
     private CameraComponent cameraComp = new CameraComponent();
     private RobotComponent[] components = {driveComp, grabComp, launchComp, liftComp, cameraComp};
     //Put all components above in an array to traverse later
@@ -66,14 +66,11 @@ public class RobotRunner extends IterativeRobot implements RobotComponent {
             rljag = new CANJaguar(3); //Rear Left Wheel Jag
             frjag = new CANJaguar(4); //Front Right Wheel Jag
             rrjag = new CANJaguar(5); //Rear Right Wheel Jag
-            //drive = new RobotDrive(rljag, rrjag);
+            driveComp = new DriveComponent(DRIVE_JOYSTICK, fljag, rljag, frjag, rrjag, accel);
         } catch (CANTimeoutException ex) {
             ex.printStackTrace();
         }
-        //Run each component's initialize method
-        for (int i = 0; i < components.length; i++) {
-            components[i].initialize();
-        }
+
     }
 
     /**
